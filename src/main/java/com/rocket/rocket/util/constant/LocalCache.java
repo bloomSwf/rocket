@@ -14,5 +14,5 @@ public class LocalCache {
 
     public static String topic = "red";
 
-    public static Integer robotNum = 10;
+    public static Integer robotNum = 15;
 }

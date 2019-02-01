@@ -37,6 +37,7 @@ public class RocketMqController {
     public Object setRedPacket(RedPacket redPacket) {
         redPacket.setAmount(BigDecimal.TEN);
         redPacket.setNum(10);
+        redPacket.setRobotNum(15);
         return redPacketService.setRedPacket(redPacket);
     }
 
