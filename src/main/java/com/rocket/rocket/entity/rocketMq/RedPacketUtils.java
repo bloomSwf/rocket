@@ -34,6 +34,7 @@ public class RedPacketUtils {
         TOTAL_MONEY= redPacket.getAmount().doubleValue();
         MAX_MONEY =redPacket.getAmount().doubleValue()-1;
         TOTAL_COUNT=redPacket.getNum();
+        leftMoney = TOTAL_MONEY; //剩余金额
         leftCount = TOTAL_COUNT;
         if(!isRight(TOTAL_MONEY, TOTAL_COUNT)) { //如果设置金额和份数不合法则报错
             JOptionPane.showMessageDialog(null, "平均值为小于最小金额", "出错啦", JOptionPane.ERROR_MESSAGE);
@@ -105,8 +106,8 @@ public class RedPacketUtils {
     }
     public static void main(String[] args) {
         RedPacket redPacket= new RedPacket();
-        redPacket.setAmount(BigDecimal.valueOf(50));
-        redPacket.setNum(100);
+        redPacket.setAmount(BigDecimal.valueOf(10));
+        redPacket.setNum(10);
        List<BigDecimal> a= splitRedPackets(redPacket);
        System.out.println(a.size());
     }
