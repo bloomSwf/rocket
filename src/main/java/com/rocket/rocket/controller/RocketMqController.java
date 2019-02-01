@@ -16,6 +16,7 @@ public class RocketMqController {
     private RedPacketService redPacketService;
 
     @RequestMapping("test")
+
     public String test() {
         return null;
     }
