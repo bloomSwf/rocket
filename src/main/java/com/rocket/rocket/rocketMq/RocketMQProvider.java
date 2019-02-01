@@ -30,7 +30,7 @@ public class RocketMQProvider {
         //指定NameServer地址，多个地址以 ; 隔开
         producer.setNamesrvAddr(namesrvAddr);
         try {
-            /**
+            /**1111
              * Producer对象在使用之前必须要调用start初始化，初始化一次即可
              * 注意：切记不可以在每次发送消息时，都调用start方法
              */
