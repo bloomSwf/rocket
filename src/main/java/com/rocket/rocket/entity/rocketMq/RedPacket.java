@@ -3,21 +3,26 @@ package com.rocket.rocket.entity.rocketMq;
 import java.math.BigDecimal;
 
 public class RedPacket {
-    private Integer Id;
+    private String Id;
 
     private Integer num;
 
     private BigDecimal amount;
 
-    public Integer getId() {
+    private Integer robotNum;
+
+    public String getId() {
         return Id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         Id = id;
     }
 
     public Integer getNum() {
+        if (num == null) {
+            return 0;
+        }
         return num;
     }
 
@@ -31,5 +36,13 @@ public class RedPacket {
 
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
+    }
+
+    public Integer getRobotNum() {
+        return robotNum;
+    }
+
+    public void setRobotNum(Integer robotNum) {
+        this.robotNum = robotNum;
     }
 }

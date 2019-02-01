@@ -3,17 +3,17 @@ package com.rocket.rocket.entity.rocketMq;
 import java.math.BigDecimal;
 
 public class RedLog {
-    private Integer redId;
+    private String redId;
 
     private String userId;
 
     private BigDecimal amount;
 
-    public Integer getRedId() {
+    public String getRedId() {
         return redId;
     }
 
-    public void setRedId(Integer redId) {
+    public void setRedId(String redId) {
         this.redId = redId;
     }
 

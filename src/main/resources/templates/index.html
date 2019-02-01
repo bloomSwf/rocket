@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>欢乐👍红包</title>
+    <link rel="stylesheet" href="../static/css/layui.css">
+</head>
+<body>
+
+<!--<button class="layui-btn" STYLE="margin-top: 70px;margin-left: 35%">-->
+    <!--<i class="layui-icon">&#xe608;</i> 添加红包-->
+<!--</button>-->
+
+<form class="layui-form" action="/test" STYLE="margin-top: 70px;margin-left: 35%">
+    <div class="layui-form-item">
+        <label class="layui-form-label">红包金额</label>
+        <div class="layui-input-inline">
+            <input type="text" name="amount" lay-verify="required" placeholder="请输入红包金额" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">红包数量</label>
+        <div class="layui-input-inline">
+            <input type="text" name="redNum" lay-verify="title" autocomplete="off" placeholder="红包数量" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">机器人数</label>
+        <div class="layui-input-inline">
+            <input type="text" name="robotNum" lay-verify="robotNum" autocomplete="off" placeholder="机器人数" class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item" STYLE="margin-left: 12%">
+        <button class="layui-btn" lay-submit="" lay-filter="demo2">发布红包</button>
+        <button class="layui-btn" lay-submit="" lay-filter="demo2">重置</button>
+    </div>
+
+</form>
+<!--<div class="site-demo-button" id="layerDemo" style="margin-left: 42%">-->
+    <!--<button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">发布红包</button>-->
+<!--</div>-->
+<script src="../static/layui.js" charset="utf-8">
+</script>
+
+
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value > 50){
+                    return '老弟金额过大请设置50以内';
+                }
+                if(value == null||value ==''){
+                    return '老弟你没填啊';
+                }
+            },
+            robotNum:function(value){
+                if(value > 100){
+                    return '人数过大，请设置100以内';
+                }
+                if(value == null||value ==''){
+                    return '老弟你没填啊';
+                }
+            }
+
+            ,pass: [
+                /^[\S]{6,12}$/
+                ,'密码必须6到12位，且不能出现空格'
+            ]
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+        //表单初始赋值
+        form.val('example', {
+            "username": "贤心" // "name": "value"
+            ,"password": "123456"
+            ,"interest": 1
+            ,"like[write]": true //复选框选中状态
+            ,"close": true //开关状态
+            ,"sex": "女"
+            ,"desc": "我爱 layui"
+        })
+
+
+    });
+</script>
+</body>
+</html>
