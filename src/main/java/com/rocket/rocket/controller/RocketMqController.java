@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class RocketMqController {
     @RequestMapping("test")
+
     public String test() {
         return null;
     }
