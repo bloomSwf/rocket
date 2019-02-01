@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rocket.rocket.mybatis.CisInPatRegMapper">
+    <resultMap id="BaseResultMap" type="com.rocket.rocket.entity.CisInPatReg">
+        <id column="VISIT_ID" property="visitId" jdbcType="DECIMAL"/>
+        <result column="PAT_ID" property="patId" jdbcType="DECIMAL"/>
+        <result column="BRANCH_CODE" property="branchCode" jdbcType="VARCHAR"/>
+        <result column="VISIT_NO" property="visitNo" jdbcType="VARCHAR"/>
+        <result column="TIMES" property="times" jdbcType="DECIMAL"/>
+        <result column="MR_NO" property="mrNo" jdbcType="VARCHAR"/>
+        <result column="MASTER_ID" property="masterId" jdbcType="DECIMAL"/>
+        <result column="WARD_ID" property="wardId" jdbcType="DECIMAL"/>
+        <result column="DEPT_ID" property="deptId" jdbcType="DECIMAL"/>
+        <result column="BED_ID" property="bedId" jdbcType="DECIMAL"/>
+        <result column="EFID" property="efid" jdbcType="VARCHAR"/>
+        <result column="ADMISSION_DOCTOR" property="admissionDoctor" jdbcType="DECIMAL"/>
+        <result column="RESIDENT_DOCTOR" property="residentDoctor" jdbcType="DECIMAL"/>
+        <result column="ATTENDING_DOCTOR" property="attendingDoctor" jdbcType="DECIMAL"/>
+        <result column="CHIEF_DOCTOR" property="chiefDoctor" jdbcType="DECIMAL"/>
+        <result column="WORK_GROUP_ID" property="workGroupId" jdbcType="DECIMAL"/>
+        <result column="IN_WARD_ID" property="inWardId" jdbcType="DECIMAL"/>
+        <result column="IN_DEPT_ID" property="inDeptId" jdbcType="DECIMAL"/>
+        <result column="WARD_IN_TIME" property="wardInTime" jdbcType="TIMESTAMP"/>
+        <result column="OUT_WAY" property="outWay" jdbcType="DECIMAL"/>
+        <result column="REFERRAL_HOSPITAL" property="referralHospital" jdbcType="VARCHAR"/>
+        <result column="CLN_OUT_TIME" property="clnOutTime" jdbcType="TIMESTAMP"/>
+        <result column="WARD_OUT_TIME" property="wardOutTime" jdbcType="TIMESTAMP"/>
+        <result column="CHECK_OUT_TIME" property="checkOutTime" jdbcType="TIMESTAMP"/>
+        <result column="IN_WAY" property="inWay" jdbcType="DECIMAL"/>
+        <result column="IN_DIAG_ID" property="inDiagId" jdbcType="DECIMAL"/>
+        <result column="IN_DIAG_CODE" property="inDiagCode" jdbcType="VARCHAR"/>
+        <result column="IN_DIAG_NAME" property="inDiagName" jdbcType="VARCHAR"/>
+        <result column="DIET_ORDER_ID" property="dietOrderId" jdbcType="DECIMAL"/>
+        <result column="CARE_LEVEL" property="careLevel" jdbcType="DECIMAL"/>
+        <result column="EME_LEVEL" property="emeLevel" jdbcType="DECIMAL"/>
+        <result column="FEE_NATURE" property="feeNature" jdbcType="DECIMAL"/>
+        <result column="INSURANCE_NO" property="insuranceNo" jdbcType="VARCHAR"/>
+        <result column="CARD_TYPE" property="cardType" jdbcType="DECIMAL"/>
+        <result column="CARD_DATA" property="cardData" jdbcType="VARCHAR"/>
+        <result column="IS_OUT_APPROVAL" property="isOutApproval" jdbcType="DECIMAL"/>
+        <result column="STATE" property="state" jdbcType="DECIMAL"/>
+        <result column="IS_INVALID" property="isInvalid" jdbcType="DECIMAL"/>
+        <result column="INVALID_EMPID" property="invalidEmpid" jdbcType="DECIMAL"/>
+        <result column="INVALID_TIME" property="invalidTime" jdbcType="TIMESTAMP"/>
+        <result column="INVALID_REASON" property="invalidReason" jdbcType="VARCHAR"/>
+        <result column="STATE_SN" property="stateSn" jdbcType="DECIMAL"/>
+        <result column="PHASE_SEQ" property="phaseSeq" jdbcType="DECIMAL"/>
+        <result column="PRIMARY_NURSE" property="primaryNurse" jdbcType="DECIMAL"/>
+        <result column="RATIO_CLASSIFY" property="ratioClassify" jdbcType="DECIMAL"/>
+        <result column="IS_HOME_BED" property="isHomeBed" jdbcType="DECIMAL"/>
+        <result column="REMARK" property="remark" jdbcType="VARCHAR"/>
+        <result column="PAYMENT" property="payment" jdbcType="VARCHAR"/>
+        <result column="DCD" property="dcd" jdbcType="DECIMAL"/>
+        <result column="PEOPLE_CLASS" property="peopleClass" jdbcType="VARCHAR"/>
+        <result column="IN_PAT_DAY" property="inPatDay" jdbcType="TIMESTAMP"/>
+        <result column="OUT_PAT_DAY" property="outPatDay" jdbcType="TIMESTAMP"/>
+        <result column="REG_EMPID" property="regEmpid" jdbcType="DECIMAL"/>
+        <result column="REG_TIME" property="regTime" jdbcType="TIMESTAMP"/>
+        <result column="MODIFY_EMPID" property="modifyEmpid" jdbcType="DECIMAL"/>
+        <result column="MODIFY_TIME" property="modifyTime" jdbcType="TIMESTAMP"/>
+        <result column="IN_REASON" property="inReason" jdbcType="VARCHAR"/>
+        <result column="RULE_ID" property="ruleId" jdbcType="DECIMAL"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbggenerated
+          This element is automatically generated by MyBatis Generator, do not modify.
+          This element was generated on 2017-10-31.
+        -->
+        VISIT_ID, PAT_ID, BRANCH_CODE, VISIT_NO, TIMES, MR_NO, MASTER_ID, WARD_ID, DEPT_ID,
+        BED_ID, EFID, ADMISSION_DOCTOR, RESIDENT_DOCTOR, ATTENDING_DOCTOR, CHIEF_DOCTOR,
+        WORK_GROUP_ID, IN_WARD_ID, IN_DEPT_ID, WARD_IN_TIME, OUT_WAY, REFERRAL_HOSPITAL,
+        CLN_OUT_TIME, WARD_OUT_TIME, CHECK_OUT_TIME, IN_WAY, IN_DIAG_ID, IN_DIAG_CODE, IN_DIAG_NAME,
+        DIET_ORDER_ID, CARE_LEVEL, EME_LEVEL, FEE_NATURE, INSURANCE_NO, CARD_TYPE, CARD_DATA,
+        IS_OUT_APPROVAL, STATE, IS_INVALID, INVALID_EMPID, INVALID_TIME, INVALID_REASON,
+        STATE_SN, PHASE_SEQ, PRIMARY_NURSE, RATIO_CLASSIFY, IS_HOME_BED, REMARK, PAYMENT,
+        DCD, PEOPLE_CLASS, IN_PAT_DAY, OUT_PAT_DAY, REG_EMPID, REG_TIME, MODIFY_EMPID, MODIFY_TIME,
+        IN_REASON, RULE_ID
+    </sql>
+    <sql id="Base_Columns">
+    R.VISIT_ID, R.PAT_ID, R.BRANCH_CODE, R.VISIT_NO, R.TIMES, R.MR_NO, R.MASTER_ID, R.WARD_ID, R.DEPT_ID,
+    R.BED_ID, R.EFID, R.ADMISSION_DOCTOR, R.RESIDENT_DOCTOR, R.ATTENDING_DOCTOR, R.CHIEF_DOCTOR,
+    R.WORK_GROUP_ID, R.IN_WARD_ID, R.IN_DEPT_ID, R.WARD_IN_TIME, R.OUT_WAY, R.REFERRAL_HOSPITAL,
+    R.CLN_OUT_TIME, R.WARD_OUT_TIME, R.CHECK_OUT_TIME, R.IN_WAY, R.IN_DIAG_ID, R.IN_DIAG_CODE, R.IN_DIAG_NAME,
+    R.DIET_ORDER_ID, R.CARE_LEVEL, R.EME_LEVEL, R.FEE_NATURE, R.INSURANCE_NO, R.CARD_TYPE, R.CARD_DATA,
+    R.IS_OUT_APPROVAL, R.STATE, R.IS_INVALID, R.INVALID_EMPID, R.INVALID_TIME, R.INVALID_REASON,
+    R.STATE_SN, R.PHASE_SEQ, R.PRIMARY_NURSE, R.RATIO_CLASSIFY, R.IS_HOME_BED, R.REMARK, R.PAYMENT,
+    R.DCD, R.PEOPLE_CLASS, R.IN_PAT_DAY, R.OUT_PAT_DAY, R.REG_EMPID, R.REG_TIME, R.MODIFY_EMPID, R.MODIFY_TIME,
+    R.IN_REASON, R.RULE_ID
+  </sql>
+    <sql id="Base_Column_List_More">
+    A.state,
+    (select name from pub_branch where code = A.branch_code) branchName,
+    A.FEE_NATURE,
+    (SELECT PREPAID_TOTAL FROM CIS_IN_PAT_ACC WHERE  VISIT_ID=A.VISIT_ID) PREPAID_TOTAL,A.VISIT_ID,B.TELE_PHONE, visit_No, B.name PAT_NAME, B.DATE_OF_BIRTH,(select NAME from pub_dictionary where type='SEX' AND ID= B.SEX) SEX_NAME, PG_KTAP_PUB_DIC.F_GET_BED_CODE(A.BED_ID) AS BED_NO,A.CARD_DATA,
+    (SELECT NAME FROM Pub_dept WHERE id=A.DEPT_ID) deptName,
+    (select name from pub_ward where id=A.WARD_ID) WARD_NAME,B.addr,
+    (SELECT NAME FROM ACC_DIC_FEE_NATURE WHERE ID = A.FEE_NATURE) AS FEE_NATURE_NAME
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        <!--
+          WARNING - @mbggenerated
+          This element is automatically generated by MyBatis Generator, do not modify.
+          This element was generated on 2017-10-31.
+        -->
+        select
+        <include refid="Base_Column_List"/>
+        from CIS_IN_PAT_REG
+        where VISIT_ID = #{visitId,jdbcType=DECIMAL}
+    </select>
+    <!--查找需要关账的病人信息-->
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--
+          WARNING - @mbggenerated
+          This element is automatically generated by MyBatis Generator, do not modify.
+          This element was generated on 2017-10-31.
+        -->
+        delete from CIS_IN_PAT_REG
+        where VISIT_ID = #{visitId,jdbcType=DECIMAL}
+    </delete>
+    <insert id="insert" parameterType="com.rocket.rocket.entity.CisInPatReg">
+        <!--
+          WARNING - @mbggenerated
+          This element is automatically generated by MyBatis Generator, do not modify.
+          This element was generated on 2017-10-31.
+        -->
+        insert into CIS_IN_PAT_REG (VISIT_ID, PAT_ID, BRANCH_CODE,
+        VISIT_NO, TIMES, MR_NO,
+        MASTER_ID, WARD_ID, DEPT_ID,
+        BED_ID, EFID, ADMISSION_DOCTOR,
+        RESIDENT_DOCTOR, ATTENDING_DOCTOR, CHIEF_DOCTOR,
+        WORK_GROUP_ID, IN_WARD_ID, IN_DEPT_ID,
+        WARD_IN_TIME, OUT_WAY, REFERRAL_HOSPITAL,
+        CLN_OUT_TIME, WARD_OUT_TIME, CHECK_OUT_TIME,
+        IN_WAY, IN_DIAG_ID, IN_DIAG_CODE,
+        IN_DIAG_NAME, DIET_ORDER_ID, CARE_LEVEL,
+        EME_LEVEL, FEE_NATURE, INSURANCE_NO,
+        CARD_TYPE, CARD_DATA, IS_OUT_APPROVAL,
+        STATE, IS_INVALID, INVALID_EMPID,
+        INVALID_TIME, INVALID_REASON, STATE_SN,
+        PHASE_SEQ, PRIMARY_NURSE, RATIO_CLASSIFY,
+        IS_HOME_BED, REMARK, PAYMENT,
+        DCD, PEOPLE_CLASS, IN_PAT_DAY,
+        OUT_PAT_DAY, REG_EMPID, REG_TIME,
+        MODIFY_EMPID, MODIFY_TIME, IN_REASON, RULE_ID
+        )
+        values (#{visitId,jdbcType=DECIMAL}, #{patId,jdbcType=DECIMAL}, #{branchCode,jdbcType=VARCHAR},
+        #{visitNo,jdbcType=VARCHAR}, #{times,jdbcType=DECIMAL}, #{mrNo,jdbcType=VARCHAR},
+        #{masterId,jdbcType=DECIMAL}, #{wardId,jdbcType=DECIMAL}, #{deptId,jdbcType=DECIMAL},
+        #{bedId,jdbcType=DECIMAL}, #{efid,jdbcType=VARCHAR}, #{admissionDoctor,jdbcType=DECIMAL},
+        #{residentDoctor,jdbcType=DECIMAL}, #{attendingDoctor,jdbcType=DECIMAL}, #{chiefDoctor,jdbcType=DECIMAL},
+        #{workGroupId,jdbcType=DECIMAL}, #{inWardId,jdbcType=DECIMAL}, #{inDeptId,jdbcType=DECIMAL},
+        #{wardInTime,jdbcType=TIMESTAMP}, #{outWay,jdbcType=DECIMAL}, #{referralHospital,jdbcType=VARCHAR},
+        #{clnOutTime,jdbcType=TIMESTAMP}, #{wardOutTime,jdbcType=TIMESTAMP}, #{checkOutTime,jdbcType=TIMESTAMP},
+        #{inWay,jdbcType=DECIMAL}, #{inDiagId,jdbcType=DECIMAL}, #{inDiagCode,jdbcType=VARCHAR},
+        #{inDiagName,jdbcType=VARCHAR}, #{dietOrderId,jdbcType=DECIMAL}, #{careLevel,jdbcType=DECIMAL},
+        #{emeLevel,jdbcType=DECIMAL}, #{feeNature,jdbcType=DECIMAL}, #{insuranceNo,jdbcType=VARCHAR},
+        #{cardType,jdbcType=DECIMAL}, #{cardData,jdbcType=VARCHAR}, #{isOutApproval,jdbcType=DECIMAL},
+        #{state,jdbcType=DECIMAL}, #{isInvalid,jdbcType=DECIMAL}, #{invalidEmpid,jdbcType=DECIMAL},
+        #{invalidTime,jdbcType=TIMESTAMP}, #{invalidReason,jdbcType=VARCHAR}, #{stateSn,jdbcType=DECIMAL},
+        #{phaseSeq,jdbcType=DECIMAL}, #{primaryNurse,jdbcType=DECIMAL}, #{ratioClassify,jdbcType=DECIMAL},
+        #{isHomeBed,jdbcType=DECIMAL}, #{remark,jdbcType=VARCHAR}, #{payment,jdbcType=VARCHAR},
+        #{dcd,jdbcType=DECIMAL}, #{peopleClass,jdbcType=VARCHAR}, #{inPatDay,jdbcType=TIMESTAMP},
+        #{outPatDay,jdbcType=TIMESTAMP}, #{regEmpid,jdbcType=DECIMAL}, #{regTime,jdbcType=TIMESTAMP},
+        #{modifyEmpid,jdbcType=DECIMAL}, #{modifyTime,jdbcType=TIMESTAMP}, #{inReason,jdbcType=VARCHAR},
+        #{ruleId,jdbcType=DECIMAL}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="com.rocket.rocket.entity.CisInPatReg">
+        <!--
+          WARNING - @mbggenerated
+          This element is automatically generated by MyBatis Generator, do not modify.
+          This element was generated on 2017-10-31.
+        -->
+        insert into CIS_IN_PAT_REG
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="visitId != null">
+                VISIT_ID,
+            </if>
+            <if test="patId != null">
+                PAT_ID,
+            </if>
+            <if test="branchCode != null">
+                BRANCH_CODE,
+            </if>
+            <if test="visitNo != null">
+                VISIT_NO,
+            </if>
+            <if test="times != null">
+                TIMES,
+            </if>
+            <if test="mrNo != null">
+                MR_NO,
+            </if>
+            <if test="masterId != null">
+                MASTER_ID,
+            </if>
+            <if test="wardId != null">
+                WARD_ID,
+            </if>
+            <if test="deptId != null">
+                DEPT_ID,
+            </if>
+            <if test="bedId != null">
+                BED_ID,
+            </if>
+            <if test="efid != null">
+                EFID,
+            </if>
+            <if test="admissionDoctor != null">
+                ADMISSION_DOCTOR,
+            </if>
+            <if test="residentDoctor != null">
+                RESIDENT_DOCTOR,
+            </if>
+            <if test="attendingDoctor != null">
+                ATTENDING_DOCTOR,
+            </if>
+            <if test="chiefDoctor != null">
+                CHIEF_DOCTOR,
+            </if>
+            <if test="workGroupId != null">
+                WORK_GROUP_ID,
+            </if>
+            <if test="inWardId != null">
+                IN_WARD_ID,
+            </if>
+            <if test="inDeptId != null">
+                IN_DEPT_ID,
+            </if>
+            <if test="wardInTime != null">
+                WARD_IN_TIME,
+            </if>
+            <if test="outWay != null">
+                OUT_WAY,
+            </if>
+            <if test="referralHospital != null">
+                REFERRAL_HOSPITAL,
+            </if>
+            <if test="clnOutTime != null">
+                CLN_OUT_TIME,
+            </if>
+            <if test="wardOutTime != null">
+                WARD_OUT_TIME,
+            </if>
+            <if test="checkOutTime != null">
+                CHECK_OUT_TIME,
+            </if>
+            <if test="inWay != null">
+                IN_WAY,
+            </if>
+            <if test="inDiagId != null">
+                IN_DIAG_ID,
+            </if>
+            <if test="inDiagCode != null">
+                IN_DIAG_CODE,
+            </if>
+            <if test="inDiagName != null">
+                IN_DIAG_NAME,
+            </if>
+            <if test="dietOrderId != null">
+                DIET_ORDER_ID,
+            </if>
+            <if test="careLevel != null">
+                CARE_LEVEL,
+            </if>
+            <if test="emeLevel != null">
+                EME_LEVEL,
+            </if>
+            <if test="feeNature != null">
+                FEE_NATURE,
+            </if>
+            <if test="insuranceNo != null">
+                INSURANCE_NO,
+            </if>
+            <if test="cardType != null">
+                CARD_TYPE,
+            </if>
+            <if test="cardData != null">
+                CARD_DATA,
+            </if>
+            <if test="isOutApproval != null">
+                IS_OUT_APPROVAL,
+            </if>
+            <if test="state != null">
+                STATE,
+            </if>
+            <if test="isInvalid != null">
+                IS_INVALID,
+            </if>
+            <if test="invalidEmpid != null">
+                INVALID_EMPID,
+            </if>
+            <if test="invalidTime != null">
+                INVALID_TIME,
+            </if>
+            <if test="invalidReason != null">
+                INVALID_REASON,
+            </if>
+            <if test="stateSn != null">
+                STATE_SN,
+            </if>
+            <if test="phaseSeq != null">
+                PHASE_SEQ,
+            </if>
+            <if test="primaryNurse != null">
+                PRIMARY_NURSE,
+            </if>
+            <if test="ratioClassify != null">
+                RATIO_CLASSIFY,
+            </if>
+            <if test="isHomeBed != null">
+                IS_HOME_BED,
+            </if>
+            <if test="remark != null">
+                REMARK,
+            </if>
+            <if test="payment != null">
+                PAYMENT,
+            </if>
+            <if test="dcd != null">
+                DCD,
+            </if>
+            <if test="peopleClass != null">
+                PEOPLE_CLASS,
+            </if>
+            <if test="inPatDay != null">
+                IN_PAT_DAY,
+            </if>
+            <if test="outPatDay != null">
+                OUT_PAT_DAY,
+            </if>
+            <if test="regEmpid != null">
+                REG_EMPID,
+            </if>
+            <if test="regTime != null">
+                REG_TIME,
+            </if>
+            <if test="modifyEmpid != null">
+                MODIFY_EMPID,
+            </if>
+            <if test="modifyTime != null">
+                MODIFY_TIME,
+            </if>
+            <if test="inReason != null">
+                IN_REASON,
+            </if>
+            <if test="ruleId != null">
+                RULE_ID,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="visitId != null">
+                #{visitId,jdbcType=DECIMAL},
+            </if>
+            <if test="patId != null">
+                #{patId,jdbcType=DECIMAL},
+            </if>
+            <if test="branchCode != null">
+                #{branchCode,jdbcType=VARCHAR},
+            </if>
+            <if test="visitNo != null">
+                #{visitNo,jdbcType=VARCHAR},
+            </if>
+            <if test="times != null">
+                #{times,jdbcType=DECIMAL},
+            </if>
+            <if test="mrNo != null">
+                #{mrNo,jdbcType=VARCHAR},
+            </if>
+            <if test="masterId != null">
+                #{masterId,jdbcType=DECIMAL},
+            </if>
+            <if test="wardId != null">
+                #{wardId,jdbcType=DECIMAL},
+            </if>
+            <if test="deptId != null">
+                #{deptId,jdbcType=DECIMAL},
+            </if>
+            <if test="bedId != null">
+                #{bedId,jdbcType=DECIMAL},
+            </if>
+            <if test="efid != null">
+                #{efid,jdbcType=VARCHAR},
+            </if>
+            <if test="admissionDoctor != null">
+                #{admissionDoctor,jdbcType=DECIMAL},
+            </if>
+            <if test="residentDoctor != null">
+                #{residentDoctor,jdbcType=DECIMAL},
+            </if>
+            <if test="attendingDoctor != null">
+                #{attendingDoctor,jdbcType=DECIMAL},
+            </if>
+            <if test="chiefDoctor != null">
+                #{chiefDoctor,jdbcType=DECIMAL},
+            </if>
+            <if test="workGroupId != null">
+                #{workGroupId,jdbcType=DECIMAL},
+            </if>
+            <if test="inWardId != null">
+                #{inWardId,jdbcType=DECIMAL},
+            </if>
+            <if test="inDeptId != null">
+                #{inDeptId,jdbcType=DECIMAL},
+            </if>
+            <if test="wardInTime != null">
+                #{wardInTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="outWay != null">
+                #{outWay,jdbcType=DECIMAL},
+            </if>
+            <if test="referralHospital != null">
+                #{referralHospital,jdbcType=VARCHAR},
+            </if>
+            <if test="clnOutTime != null">
+                #{clnOutTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="wardOutTime != null">
+                #{wardOutTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="checkOutTime != null">
+                #{checkOutTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="inWay != null">
+                #{inWay,jdbcType=DECIMAL},
+            </if>
+            <if test="inDiagId != null">
+                #{inDiagId,jdbcType=DECIMAL},
+            </if>
+            <if test="inDiagCode != null">
+                #{inDiagCode,jdbcType=VARCHAR},
+            </if>
+            <if test="inDiagName != null">
+                #{inDiagName,jdbcType=VARCHAR},
+            </if>
+            <if test="dietOrderId != null">
+                #{dietOrderId,jdbcType=DECIMAL},
+            </if>
+            <if test="careLevel != null">
+                #{careLevel,jdbcType=DECIMAL},
+            </if>
+            <if test="emeLevel != null">
+                #{emeLevel,jdbcType=DECIMAL},
+            </if>
+            <if test="feeNature != null">
+                #{feeNature,jdbcType=DECIMAL},
+            </if>
+            <if test="insuranceNo != null">
+                #{insuranceNo,jdbcType=VARCHAR},
+            </if>
+            <if test="cardType != null">
+                #{cardType,jdbcType=DECIMAL},
+            </if>
+            <if test="cardData != null">
+                #{cardData,jdbcType=VARCHAR},
+            </if>
+            <if test="isOutApproval != null">
+                #{isOutApproval,jdbcType=DECIMAL},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=DECIMAL},
+            </if>
+            <if test="isInvalid != null">
+                #{isInvalid,jdbcType=DECIMAL},
+            </if>
+            <if test="invalidEmpid != null">
+                #{invalidEmpid,jdbcType=DECIMAL},
+            </if>
+            <if test="invalidTime != null">
+                #{invalidTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="invalidReason != null">
+                #{invalidReason,jdbcType=VARCHAR},
+            </if>
+            <if test="stateSn != null">
+                #{stateSn,jdbcType=DECIMAL},
+            </if>
+            <if test="phaseSeq != null">
+                #{phaseSeq,jdbcType=DECIMAL},
+            </if>
+            <if test="primaryNurse != null">
+                #{primaryNurse,jdbcType=DECIMAL},
+            </if>
+            <if test="ratioClassify != null">
+                #{ratioClassify,jdbcType=DECIMAL},
+            </if>
+            <if test="isHomeBed != null">
+                #{isHomeBed,jdbcType=DECIMAL},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="payment != null">
+                #{payment,jdbcType=VARCHAR},
+            </if>
+            <if test="dcd != null">
+                #{dcd,jdbcType=DECIMAL},
+            </if>
+            <if test="peopleClass != null">
+                #{peopleClass,jdbcType=VARCHAR},
+            </if>
+            <if test="inPatDay != null">
+                #{inPatDay,jdbcType=TIMESTAMP},
+            </if>
+            <if test="outPatDay != null">
+                #{outPatDay,jdbcType=TIMESTAMP},
+            </if>
+            <if test="regEmpid != null">
+                #{regEmpid,jdbcType=DECIMAL},
+            </if>
+            <if test="regTime != null">
+                #{regTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyEmpid != null">
+                #{modifyEmpid,jdbcType=DECIMAL},
+            </if>
+            <if test="modifyTime != null">
+                #{modifyTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="inReason != null">
+                #{inReason,jdbcType=VARCHAR},
+            </if>
+            <if test="ruleId != null">
+                #{ruleId,jdbcType=DECIMAL},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.rocket.rocket.entity.CisInPatReg">
+        <!--
+          WARNING - @mbggenerated
+          This element is automatically generated by MyBatis Generator, do not modify.
+          This element was generated on 2017-10-31.
+        -->
+        update CIS_IN_PAT_REG
+        <set>
+            <if test="patId != null">
+                PAT_ID = #{patId,jdbcType=DECIMAL},
+            </if>
+            <if test="branchCode != null">
+                BRANCH_CODE = #{branchCode,jdbcType=VARCHAR},
+            </if>
+            <if test="visitNo != null">
+                VISIT_NO = #{visitNo,jdbcType=VARCHAR},
+            </if>
+            <if test="times != null">
+                TIMES = #{times,jdbcType=DECIMAL},
+            </if>
+            <if test="mrNo != null">
+                MR_NO = #{mrNo,jdbcType=VARCHAR},
+            </if>
+            <if test="masterId != null">
+                MASTER_ID = #{masterId,jdbcType=DECIMAL},
+            </if>
+            <if test="wardId != null">
+                WARD_ID = #{wardId,jdbcType=DECIMAL},
+            </if>
+            <if test="deptId != null">
+                DEPT_ID = #{deptId,jdbcType=DECIMAL},
+            </if>
+            <if test="bedId != null">
+                BED_ID = #{bedId,jdbcType=DECIMAL},
+            </if>
+            <if test="efid != null">
+                EFID = #{efid,jdbcType=VARCHAR},
+            </if>
+            <if test="admissionDoctor != null">
+                ADMISSION_DOCTOR = #{admissionDoctor,jdbcType=DECIMAL},
+            </if>
+            <if test="residentDoctor != null">
+                RESIDENT_DOCTOR = #{residentDoctor,jdbcType=DECIMAL},
+            </if>
+            <if test="attendingDoctor != null">
+                ATTENDING_DOCTOR = #{attendingDoctor,jdbcType=DECIMAL},
+            </if>
+            <if test="chiefDoctor != null">
+                CHIEF_DOCTOR = #{chiefDoctor,jdbcType=DECIMAL},
+            </if>
+            <if test="workGroupId != null">
+                WORK_GROUP_ID = #{workGroupId,jdbcType=DECIMAL},
+            </if>
+            <if test="inWardId != null">
+                IN_WARD_ID = #{inWardId,jdbcType=DECIMAL},
+            </if>
+            <if test="inDeptId != null">
+                IN_DEPT_ID = #{inDeptId,jdbcType=DECIMAL},
+            </if>
+            <if test="wardInTime != null">
+                WARD_IN_TIME = #{wardInTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="outWay != null">
+                OUT_WAY = #{outWay,jdbcType=DECIMAL},
+            </if>
+            <if test="referralHospital != null">
+                REFERRAL_HOSPITAL = #{referralHospital,jdbcType=VARCHAR},
+            </if>
+            <if test="clnOutTime != null">
+                CLN_OUT_TIME = #{clnOutTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="wardOutTime != null">
+                WARD_OUT_TIME = #{wardOutTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="checkOutTime != null">
+                CHECK_OUT_TIME = #{checkOutTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="inWay != null">
+                IN_WAY = #{inWay,jdbcType=DECIMAL},
+            </if>
+            <if test="inDiagId != null">
+                IN_DIAG_ID = #{inDiagId,jdbcType=DECIMAL},
+            </if>
+            <if test="inDiagCode != null">
+                IN_DIAG_CODE = #{inDiagCode,jdbcType=VARCHAR},
+            </if>
+            <if test="inDiagName != null">
+                IN_DIAG_NAME = #{inDiagName,jdbcType=VARCHAR},
+            </if>
+            <if test="dietOrderId != null">
+                DIET_ORDER_ID = #{dietOrderId,jdbcType=DECIMAL},
+            </if>
+            <if test="careLevel != null">
+                CARE_LEVEL = #{careLevel,jdbcType=DECIMAL},
+            </if>
+            <if test="emeLevel != null">
+                EME_LEVEL = #{emeLevel,jdbcType=DECIMAL},
+            </if>
+            <if test="feeNature != null">
+                FEE_NATURE = #{feeNature,jdbcType=DECIMAL},
+            </if>
+            <if test="insuranceNo != null">
+                INSURANCE_NO = #{insuranceNo,jdbcType=VARCHAR},
+            </if>
+            <if test="cardType != null">
+                CARD_TYPE = #{cardType,jdbcType=DECIMAL},
+            </if>
+            <if test="cardData != null">
+                CARD_DATA = #{cardData,jdbcType=VARCHAR},
+            </if>
+            <if test="isOutApproval != null">
+                IS_OUT_APPROVAL = #{isOutApproval,jdbcType=DECIMAL},
+            </if>
+            <if test="state != null">
+                STATE = #{state,jdbcType=DECIMAL},
+            </if>
+            <if test="isInvalid != null">
+                IS_INVALID = #{isInvalid,jdbcType=DECIMAL},
+            </if>
+            <if test="invalidEmpid != null">
+                INVALID_EMPID = #{invalidEmpid,jdbcType=DECIMAL},
+            </if>
+            <if test="invalidTime != null">
+                INVALID_TIME = #{invalidTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="invalidReason != null">
+                INVALID_REASON = #{invalidReason,jdbcType=VARCHAR},
+            </if>
+            <if test="stateSn != null">
+                STATE_SN = #{stateSn,jdbcType=DECIMAL},
+            </if>
+            <if test="phaseSeq != null">
+                PHASE_SEQ = #{phaseSeq,jdbcType=DECIMAL},
+            </if>
+            <if test="primaryNurse != null">
+                PRIMARY_NURSE = #{primaryNurse,jdbcType=DECIMAL},
+            </if>
+            <if test="ratioClassify != null">
+                RATIO_CLASSIFY = #{ratioClassify,jdbcType=DECIMAL},
+            </if>
+            <if test="isHomeBed != null">
+                IS_HOME_BED = #{isHomeBed,jdbcType=DECIMAL},
+            </if>
+            <if test="remark != null">
+                REMARK = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="payment != null">
+                PAYMENT = #{payment,jdbcType=VARCHAR},
+            </if>
+            <if test="dcd != null">
+                DCD = #{dcd,jdbcType=DECIMAL},
+            </if>
+            <if test="peopleClass != null">
+                PEOPLE_CLASS = #{peopleClass,jdbcType=VARCHAR},
+            </if>
+            <if test="inPatDay != null">
+                IN_PAT_DAY = #{inPatDay,jdbcType=TIMESTAMP},
+            </if>
+            <if test="outPatDay != null">
+                OUT_PAT_DAY = #{outPatDay,jdbcType=TIMESTAMP},
+            </if>
+            <if test="regEmpid != null">
+                REG_EMPID = #{regEmpid,jdbcType=DECIMAL},
+            </if>
+            <if test="regTime != null">
+                REG_TIME = #{regTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyEmpid != null">
+                MODIFY_EMPID = #{modifyEmpid,jdbcType=DECIMAL},
+            </if>
+            <if test="modifyTime != null">
+                MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="inReason != null">
+                IN_REASON = #{inReason,jdbcType=VARCHAR},
+            </if>
+            <if test="ruleId != null">
+                RULE_ID = #{ruleId,jdbcType=DECIMAL},
+            </if>
+        </set>
+        where VISIT_ID = #{visitId,jdbcType=DECIMAL}
+    </update>
+</mapper>
