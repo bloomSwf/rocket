@@ -6,6 +6,7 @@ import com.rocket.rocket.util.constant.LocalCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.math.BigDecimal;
 
@@ -16,9 +17,20 @@ public class RocketMqController {
     private RedPacketService redPacketService;
 
     @RequestMapping("test")
-
     public String test() {
         return null;
+    }
+
+    @RequestMapping("index")
+    public ModelAndView index() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("index");
+        return mav;
+    }
+
+    @RequestMapping("login")
+    public Object login() {
+        return "login";
     }
 
     @RequestMapping("setRedPacket")

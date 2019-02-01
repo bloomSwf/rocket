@@ -44,6 +44,7 @@ public class RedConsumer implements ApplicationRunner {
             System.out.println("机器人"+ (i+1) +"ID：" + UUID);
             //消费者的组名
             DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(UUID);
+            consumer.setConsumeMessageBatchMaxSize(100);
 
             //指定NameServer地址，多个地址以 ; 隔开
             consumer.setNamesrvAddr(namesrvAddr);
