@@ -77,7 +77,7 @@ public class RocketMQConsumer implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        System.out.println("RocketMQConsumer初始化...");
-        defaultMQPushConsumer();
+//        System.out.println("RocketMQConsumer初始化...");
+//        defaultMQPushConsumer();
     }
 }
